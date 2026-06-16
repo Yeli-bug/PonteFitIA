@@ -1,5 +1,26 @@
 # PonteFitIA
 
+Search and workout generation app built with Angular.
+
+## Features
+
+- Search exercises
+- Filter by muscle
+- Filter by difficulty
+- View exercise details
+- Generate workout routines
+
+## Tech Stack
+
+- Angular
+- TypeScript
+- Angular Material
+- API Ninjas
+
+## Status
+
+🚧 In Progress
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
 
 ## Development server
