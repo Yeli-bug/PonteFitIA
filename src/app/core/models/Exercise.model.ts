@@ -1,9 +1,13 @@
 export interface Exercise {
-    name: string;
-    type: string;
-    muscle: string;
-    difficulty: string;
-    instructions: string;
-    equipments: string[];
-    safety_info: string;
+  id: string;
+  name: string;
+  force: string | null;
+  level: string;
+  mechanic: string | null;
+  equipment: string | null;
+  primaryMuscles: string[];
+  secondaryMuscles: string[];
+  instructions: string[];
+  category: string;
+  images: string[];
 }

@@ -1,4 +1,4 @@
-import { Exercise } from './Exercise.model';
+import { Exercise } from './exercise.model';
 
 export interface Routine {
     name: string;
