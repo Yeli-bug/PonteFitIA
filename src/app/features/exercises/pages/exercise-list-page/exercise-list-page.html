@@ -1,0 +1,7 @@
+<h1>Exercises</h1>
+
+<section class="exercise-grid">
+  @for (exercise of exercises; track exercise.id) {
+    <app-exercise-card [exercise]="exercise"/>
+  }
+</section>
