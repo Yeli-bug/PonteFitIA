@@ -1,8 +1,14 @@
-.example-card {
+// .exercise-header-image {
+//   background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
+//   background-size: cover;
+// }
+.exercise-card {
   max-width: 400px;
 }
-
-.example-header-image {
-  background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.instructions {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+

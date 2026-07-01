@@ -17,6 +17,7 @@ export class ExerciseListPage implements OnInit {
   ngOnInit(): void {
     this.exerciseService.getExercises().subscribe({
       next: (exercises) => {
+      console.log('Exercises loaded:', exercises);
         this.exercises = exercises.slice(0, 12); // Limit to 12 exercises
       },
       error: (error) => {
