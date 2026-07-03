@@ -2,7 +2,7 @@
   <mat-card-header>
     <!-- <div mat-card-avatar class="exercise-header-image"></div> -->
     <mat-card-title>{{ exercise.name }}</mat-card-title>
-    <mat-card-subtitle>{{ exercise.primaryMuscles[0] }} · {{ exercise.level }} </mat-card-subtitle>
+    <mat-card-subtitle>{{ exercise.primaryMuscles[0] | capitalize }} · {{ exercise.level | capitalize }} </mat-card-subtitle>
   </mat-card-header>
   <img
   mat-card-image
@@ -12,13 +12,16 @@
 
   <mat-card-content>
     <p>
-      Equipment: {{ exercise.equipment || 'No equipment' }}
+          <strong class="label">Equipment: </strong>
+          {{ exercise.equipment | capitalize }}
     </p>
     <p>
-      Category: {{ exercise.category }}
+          <strong class="label">Category: </strong>
+          {{ exercise.category | capitalize }}
     </p>
-    <p >
-      Instructions: {{ exercise.instructions }}
+    <p class="instructions">
+      <strong class="label">Instructions: </strong>
+      {{ exercise.instructions }}
     </p>
   </mat-card-content>
   <mat-card-actions>

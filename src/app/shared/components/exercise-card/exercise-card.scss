@@ -2,8 +2,28 @@
 //   background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
 //   background-size: cover;
 // }
+@use '@angular/material' as mat;
+
 .exercise-card {
-  max-width: 400px;
+  @include mat.card-overrides((
+    outlined-container-color: #ffffff,
+    outlined-container-shape: 16px,
+    outlined-outline-color: #ddd,
+    outlined-outline-width: 1px,
+
+    title-text-size: 20px,
+    title-text-weight: 500,
+    subtitle-text-color: #524e4e,
+    subtitle-text-size: 14px,
+  ));
+}
+
+.label {
+  font-weight: 500;
+  color: var(--mat-sys-on-surface);
+}
+mat-card-content p {
+  margin: 0.4rem 0;
 }
 .instructions {
   display: -webkit-box;
