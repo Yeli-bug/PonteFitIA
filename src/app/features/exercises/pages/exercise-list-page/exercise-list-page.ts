@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ExerciseCard } from "../../../../shared/components/exercise-card/exercise-card";
 import { ExerciseService } from "../../../../core/services/exercise";
 import { Exercise } from "../../../../core/models/exercise.model";
+import { ExerciseFilters } from '../../components/exercise-filters/exercise-filters';
 
 @Component({
   selector: 'app-exercise-list-page',
-  imports: [ExerciseCard],
+  imports: [ExerciseCard, ExerciseFilters],
   templateUrl: './exercise-list-page.html',
   styleUrl: './exercise-list-page.scss',
 })
@@ -13,6 +14,10 @@ export class ExerciseListPage implements OnInit {
   exercises: Exercise[] = [];
 
   constructor(private readonly exerciseService: ExerciseService) {}
+
+  onSearchChange(searchTerm: string) {
+  console.log(searchTerm);
+}
 
   ngOnInit(): void {
     this.exerciseService.getExercises().subscribe({
