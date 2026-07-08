@@ -4,7 +4,7 @@
 
 <h2>Exercises</h2>
 <section class="exercise-grid">
-  @for (exercise of exercises; track exercise.id) {
+  @for (exercise of filteredExercises; track exercise.id) {
     <app-exercise-card [exercise]="exercise"></app-exercise-card>
   }
 </section>

@@ -12,22 +12,22 @@ import { ExerciseFilters } from '../../components/exercise-filters/exercise-filt
 })
 export class ExerciseListPage implements OnInit {
   exercises: Exercise[] = [];
+  filteredExercises: Exercise[] = [];
 
   constructor(private readonly exerciseService: ExerciseService) {}
 
   onSearchChange(searchTerm: string) {
-  console.log(searchTerm);
+  const normalizedSearch = searchTerm.toLowerCase().trim();
+
+  this.filteredExercises = this.exercises.filter((exercise) =>
+    exercise.name.toLowerCase().includes(normalizedSearch)
+  );
 }
 
   ngOnInit(): void {
-    this.exerciseService.getExercises().subscribe({
-      next: (exercises) => {
-      console.log('Exercises loaded:', exercises);
-        this.exercises = exercises.slice(0, 12); // Limit to 12 exercises
-      },
-      error: (error) => {
-        console.error('Error loading exercises:', error);
-      },
+    this.exerciseService.getExercises().subscribe((exercises) => {
+      this.exercises = exercises;
+      this.filteredExercises = exercises;
     });
   }
 }
